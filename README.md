@@ -1,2 +1,2 @@
-# Kespeaker
-A simple Gespeaker alternative
+# Espeaker-qtgui
+A simple Qt5 gui for the Espeaker.
