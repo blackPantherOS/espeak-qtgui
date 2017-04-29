@@ -1,2 +1,2 @@
 # Espeaker-qtgui
-A simple Qt5 gui for the Espeak.
+A simple Qt5 Gui for the Espeak.
