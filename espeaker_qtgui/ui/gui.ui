@@ -139,6 +139,19 @@
         </item>
        </widget>
       </item>
+      <item>
+       <spacer name="horizontalSpacer_2">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
      </layout>
     </item>
     <item>
@@ -169,20 +182,14 @@
           </property>
          </widget>
         </item>
-        <item>
-         <spacer name="horizontalSpacer_2">
-          <property name="orientation">
-           <enum>Qt::Horizontal</enum>
-          </property>
-          <property name="sizeHint" stdset="0">
-           <size>
-            <width>40</width>
-            <height>20</height>
-           </size>
-          </property>
-         </spacer>
-        </item>
        </layout>
+      </item>
+      <item>
+       <widget class="Line" name="line_3">
+        <property name="orientation">
+         <enum>Qt::Vertical</enum>
+        </property>
+       </widget>
       </item>
       <item>
        <widget class="QLabel" name="label_10">
@@ -219,7 +226,7 @@
     <item>
      <widget class="QLabel" name="label_5">
       <property name="text">
-       <string>Advenced settings</string>
+       <string>Advanced settings</string>
       </property>
      </widget>
     </item>
@@ -240,10 +247,16 @@
       </item>
       <item>
        <widget class="QSlider" name="pitch_slider">
+        <property name="tracking">
+         <bool>false</bool>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="pitch_lcdNumber"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_4">
@@ -277,10 +290,16 @@
       </item>
       <item>
        <widget class="QSlider" name="volume_slider">
+        <property name="tracking">
+         <bool>false</bool>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="volume_lcdNumber"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_5">
@@ -314,10 +333,16 @@
       </item>
       <item>
        <widget class="QSlider" name="speed_slider">
+        <property name="tracking">
+         <bool>false</bool>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="speed_lcdNumber"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_6">
@@ -351,10 +376,19 @@
       </item>
       <item>
        <widget class="QSlider" name="delay_slider">
+        <property name="tracking">
+         <bool>false</bool>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>
+        <property name="tickInterval">
+         <number>1</number>
+        </property>
        </widget>
+      </item>
+      <item>
+       <widget class="QLCDNumber" name="delay_lcdNumber"/>
       </item>
       <item>
        <spacer name="horizontalSpacer_7">
