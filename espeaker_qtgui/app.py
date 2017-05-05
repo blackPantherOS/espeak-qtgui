@@ -1,7 +1,20 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-from PyQt5.QtWidgets import QMainWindow
+#*********************************************************************************************************
+#*   __     __               __     ______                __   __                      _______ _______   *
+#*  |  |--.|  |.---.-..----.|  |--.|   __ \.---.-..-----.|  |_|  |--..-----..----.    |       |     __|  *
+#*  |  _  ||  ||  _  ||  __||    < |    __/|  _  ||     ||   _|     ||  -__||   _|    |   -   |__     |  *
+#*  |_____||__||___._||____||__|__||___|   |___._||__|__||____|__|__||_____||__|      |_______|_______|  *
+#* http://www.blackpantheros.eu | http://www.blackpanther.hu - kbarcza[]blackpanther.hu * Charles Barcza *
+#*                                                                                                       *
+#*                      Written by Miklos Horvath * hmiki[]blackpantheros.eu                             *
+#*                                                                                                       *
+#*************************************************************************************(c)2002-2017********
+
+from PyQt5.QtWidgets import QMainWindow, QFileDialog
+
+import sys
 
 from espeaker_qtgui.ui.gui import Ui_MainWindow
 
@@ -19,6 +32,7 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         self.male_radioButton.toggled.connect(self.load_variants)
         self.variant_comboBox.currentIndexChanged.connect(self.variant_changed)
         self.language_comboBox.currentIndexChanged.connect(self.language_changed)
+
         self.pitch_slider.valueChanged.connect(self.pitch_changed)
         self.pitch_slider.sliderMoved.connect(self.pitch_moved)
         self.volume_slider.valueChanged.connect(self.volume_changed)
@@ -27,6 +41,23 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         self.speed_slider.sliderMoved.connect(self.speed_moved)
         self.delay_slider.valueChanged.connect(self.delay_changed)
         self.delay_slider.sliderMoved.connect(self.delay_moved)
+
+        self.actionNew.triggered.connect(self.new_button_clicked)
+        self.actionOpen.triggered.connect(self.open_button_clicked)
+        self.actionSave_As.triggered.connect(self.save_as_button_clicked)
+        self.actionQuit.triggered.connect(sys.exit)
+        self.actionPlay.triggered.connect(self.play_button_clicked)
+        self.actionStop.triggered.connect(self.stop_button_clicked)
+        self.actionRecord.triggered.connect(self.record_button_clicked)
+        self.actionRevert.triggered.connect(self.revert_button_clicked)
+        self.actionAbout.triggered.connect(self.show_about_dialog)
+        
+    def show_about_dialog(self):
+        import subprocess
+        subprocess.Popen(['pydialog', '--msgbox', 
+                          '''"Written by <b>Miklos Horvath</b> <br/><br/>
+                          <a href="mailto:hmiki@blackpantheros.eu">Email: hmiki@blackpantheros.eu</a><br/><br/> 
+                          <b>blackPanther Europe</b>"'''])
         
     def load_settings(self):
         self.settings.load()
@@ -114,14 +145,28 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         self.textEdit.clear()
 
     def open_button_clicked(self):
-        print('2') # txt megnyitása
+        file = QFileDialog.getOpenFileName(self, "Espeaker-QtQui", '', filter="Text Files (*.txt);; All Files (*)")[0]
+        if file != '':
+            with open(file, 'r') as file:
+                self.textEdit.setPlainText(file.read())
 
     def save_as_button_clicked(self):
-        print('3') # Írás egy text fileba
+        file = QFileDialog.getSaveFileName(self, "Espeaker-QtQui", '', filter="Text Files (*.txt);; All Files (*)")[0]
+        if file != '':
+            with open(file, 'w') as file:
+                file.write(self.textEdit.toPlainText())
 
     def record_button_clicked(self):
-        print('4') # Írás wav-ba
-
+        file = QFileDialog.getSaveFileName(self, "Espeaker-QtQui", '', filter="Wav files (*.wav)")[0]
+        if file != '':
+            text = self.textEdit.toPlainText()
+            language = self.language_codes[self.language_comboBox.currentIndex()] + "+" + self.variants[self.variant_comboBox.currentIndex()]
+            pitch = self.pitch_slider.value()
+            volume = self.volume_slider.value()
+            speed = self.speed_slider.value()
+            delay = self.delay_slider.value()
+            self.engine.play(text, language, pitch, volume, speed, delay, file)
+        
     def revert_button_clicked(self):
         self.pitch_slider.setValue(50)
         self.volume_slider.setValue(100)
@@ -138,5 +183,5 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         self.engine.play(text, language, pitch, volume, speed, delay)
 
     def stop_button_clicked(self):
-        print('7')
+        self.engine.stop()
     
