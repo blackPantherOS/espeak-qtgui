@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=espeaker-qtgui
+Name=espeaker-qtgui
+Comment=Text to Speech
+Comment[hu]=Szövegfelolvasás
+GenericName=Text to Speech
+GenericName[hu]=Szövegfelolvasás
+Icon=espeaker-qtgui
+Categories=Audio;
+MimeType=text/plain;image/bmp;image/tiff;image/jpeg;image/png;application/pdf;image/jpeg2000; 
