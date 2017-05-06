@@ -14,7 +14,7 @@
 
 import os, configparser
 
-CFGFILE = os.environ["HOME"]+"/.config/espeaker_qtgui.cfg"
+CFGFILE = os.environ["HOME"]+"/.config/espeak_qtgui.cfg"
 
 class Settings():
     def __init__(self):

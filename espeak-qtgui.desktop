@@ -2,12 +2,12 @@
 Version=1.0
 Type=Application
 Terminal=false
-Exec=espeaker-qtgui
-Name=espeaker-qtgui
+Exec=espeak-qtgui
+Name=espeak-qtgui
 Comment=Text to Speech
 Comment[hu]=Szövegfelolvasás
 GenericName=Text to Speech
 GenericName[hu]=Szövegfelolvasás
-Icon=espeaker-qtgui
+Icon=espeak-qtgui
 Categories=Audio;
 MimeType=text/plain;image/bmp;image/tiff;image/jpeg;image/png;application/pdf;image/jpeg2000; 

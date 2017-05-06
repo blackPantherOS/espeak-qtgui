@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file 'espeaker_qtgui/ui/gui.ui'
+# Form implementation generated from reading ui file 'espeak_qtgui/ui/gui.ui'
 #
 # Created by: PyQt5 UI code generator 5.6
 #
@@ -233,7 +233,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "Espeaker-QtGui"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "espeak-qtgui"))
         self.new_button.setText(_translate("MainWindow", "New"))
         self.open_button.setText(_translate("MainWindow", "Open"))
         self.save_as_button.setText(_translate("MainWindow", "Save As"))

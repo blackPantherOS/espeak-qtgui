@@ -16,7 +16,7 @@ from PyQt5.QtWidgets import QMainWindow, QFileDialog
 
 import sys
 
-from espeaker_qtgui.ui.gui import Ui_MainWindow
+from espeak_qtgui.ui.gui import Ui_MainWindow
 
 class  MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self, settings):
@@ -114,7 +114,7 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         
     def load_engine(self):
         self.engine = None
-        exec("from espeaker_qtgui.engines." + self.settings.engine + " import Engine")
+        exec("from espeak_qtgui.engines." + self.settings.engine + " import Engine")
         exec("self.engine = Engine()")
         
     def load_languages(self):
@@ -145,19 +145,19 @@ class  MainWindow(QMainWindow, Ui_MainWindow):
         self.textEdit.clear()
 
     def open_button_clicked(self):
-        file = QFileDialog.getOpenFileName(self, "Espeaker-QtQui", '', filter="Text Files (*.txt);; All Files (*)")[0]
+        file = QFileDialog.getOpenFileName(self, "espeak-qtgui", '', filter="Text Files (*.txt);; All Files (*)")[0]
         if file != '':
             with open(file, 'r') as file:
                 self.textEdit.setPlainText(file.read())
 
     def save_as_button_clicked(self):
-        file = QFileDialog.getSaveFileName(self, "Espeaker-QtQui", '', filter="Text Files (*.txt);; All Files (*)")[0]
+        file = QFileDialog.getSaveFileName(self, "espeak-qtgui", '', filter="Text Files (*.txt);; All Files (*)")[0]
         if file != '':
             with open(file, 'w') as file:
                 file.write(self.textEdit.toPlainText())
 
     def record_button_clicked(self):
-        file = QFileDialog.getSaveFileName(self, "Espeaker-QtQui", '', filter="Wav files (*.wav)")[0]
+        file = QFileDialog.getSaveFileName(self, "espeak-qtgui", '', filter="Wav files (*.wav)")[0]
         if file != '':
             text = self.textEdit.toPlainText()
             language = self.language_codes[self.language_comboBox.currentIndex()] + "+" + self.variants[self.variant_comboBox.currentIndex()]

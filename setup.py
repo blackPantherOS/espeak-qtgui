@@ -14,13 +14,13 @@
 
 from distutils.core import setup
 
-setup(name='espeaker-qtgui',
+setup(name='espeak-qtgui',
       version='1.0',
       description='Qt5 Gui for Espeak',
       author='Miklos Horvath',
       author_email='hmiki@blackpantheros.eu',
-      url='https://github.com/hmikihth/espeaker-qtgui/',
-      packages=['espeaker_qtgui', 'espeaker_qtgui.ui', 'espeaker_qtgui.engines'],
-      scripts=['espeaker-qtgui'],
-      data_files=[('share/applications',['espeaker-qtgui.desktop'])]
+      url='https://github.com/hmikihth/espeak-qtgui/',
+      packages=['espeak_qtgui', 'espeak_qtgui.ui', 'espeak_qtgui.engines'],
+      scripts=['espeak-qtgui'],
+      data_files=[('share/applications',['espeak-qtgui.desktop'])]
      )

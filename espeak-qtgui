@@ -14,12 +14,12 @@
 
 import gettext, sys
 
-gettext.install("espeaker-qtgui", "/usr/share/locale")
+gettext.install("espeak-qtgui", "/usr/share/locale")
 
 from PyQt5.QtWidgets import QApplication
 
-from espeaker_qtgui.settings import Settings
-from espeaker_qtgui.app import MainWindow
+from espeak_qtgui.settings import Settings
+from espeak_qtgui.app import MainWindow
 
 if __name__ == "__main__":
     settings = Settings()
