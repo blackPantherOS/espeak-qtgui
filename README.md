@@ -1,10 +1,13 @@
+# Espeak-qtgui
+
 Summary
 ---------
 == English ==
-# Espeak-qtgui
+
 A simple Qt5 Gui for the Espeak. 
 
 == Hungarian ==
+
 Egy egyszerű Qt5 grafikus felület az Espeak-hez
 
 
@@ -15,5 +18,5 @@ Screenshot
 
 Plan
 ----------
-Dbus messages 
+Dbus messages,
 pydialog integration
