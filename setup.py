@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 #*********************************************************************************************************
@@ -10,9 +10,10 @@
 #*                                                                                                       *
 #*                      Written by Miklos Horvath * hmiki[]blackpantheros.eu                             *
 #*                                                                                                       *
-#*************************************************************************************(c)2002-2017********
+#*************************************************************************************(c)2002-2020********
 
 from distutils.core import setup
+from cx_Freeze import setup, Executable
 
 setup(name='espeak-qtgui',
       version='1.0',
@@ -21,6 +22,8 @@ setup(name='espeak-qtgui',
       author_email='hmiki@blackpantheros.eu',
       url='https://github.com/hmikihth/espeak-qtgui/',
       packages=['espeak_qtgui', 'espeak_qtgui.ui', 'espeak_qtgui.engines'],
-      scripts=['espeak-qtgui'],
+      scripts=['espeak-qtgui.py'],
+      executables = [Executable("espeak-qtgui.py")],
       data_files=[('share/applications',['espeak-qtgui.desktop'])]
      )
+
