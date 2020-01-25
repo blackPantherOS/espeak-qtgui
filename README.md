@@ -16,10 +16,6 @@ Requires the espeak-ng or espeak engine is installed
 
 Screenshot
 ----------
-![rpmanager](https://raw.githubusercontent.com/blackPantherOS/espeak-qtgui/master/img/screenshot.png)
+![rpmanager](https://raw.githubusercontent.com/blackPantherOS/espeak-qtgui/master/img/screenshot-1.0.png)
 
 
-Plan
-----------
-Dbus messages,
-pydialog integration
