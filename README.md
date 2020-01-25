@@ -10,6 +10,9 @@ A simple Qt5 Gui for the Espeak.
 
 Egy egyszerű Qt5 grafikus felület az Espeak-hez
 
+Dependency
+----------
+Requires the espeak-ng or espeak engine is installed
 
 Screenshot
 ----------
